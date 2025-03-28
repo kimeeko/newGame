@@ -1,6 +1,5 @@
 #include <fstream>
 #include "Header.h"
-#include <string>
 
 using namespace Nastolki;
 using namespace std;
