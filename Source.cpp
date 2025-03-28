@@ -37,11 +37,11 @@ void Nastolki::load(ni* l, const string igri1)
     ifstream file(igri1);
     if (!file)
     {
-        cout << "ôàéë íå íàéäåí. Ñîçäàéòå íîâûé ôàéë" << endl;
+        cout << "Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½. Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»" << endl;
         ofstream newFile(igri1);
         if (!file)
         {
-            cout << "Îøèáêà! Íå óäàëîñü ñîçäàòü ôàéë." << endl;
+            cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»." << endl;
             return;
         }
         file.close();
@@ -60,7 +60,7 @@ void Nastolki::save(ni* l, const string igri1)
     ofstream file(igri1);
     if (!file)
     {
-        cout << "Îøèáêà! Íå óäàëîñü ñîõðàíèòü ôàéë." << endl;
+        cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»." << endl;
         return;
     }
     ni* current = l->first;
@@ -88,7 +88,7 @@ void Nastolki::deletes(ni* l, int index)
 {
     if (l->n == 0 || index < 0 || index >= l->n)
     {
-        cout << "Íåâåðíûé èíäåêñ." << endl;
+        cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¸Ð½Ð´ÐµÐºÑ." << endl;
         return;
     }
     if (index == 0)
@@ -102,7 +102,7 @@ void Nastolki::deletes(ni* l, int index)
         ni* prev = get(l, index - 1);
         if (!prev)
         {
-            cout << "Òîâàð íå íàéäåí." << endl;
+            cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½." << endl;
             return;
         }
         ni* current = prev->next;
@@ -124,11 +124,11 @@ void Nastolki::print(ni* l)
     ni* current = l->first;
     int index = 1;
     if (l -> first == nullptr) {
-        cout << "Òîâàðîâ íåò." << endl;
+        cout << "Ð¢Ð¾Ð²Ð°Ñ€Ð¾Ð² Ð½ÐµÑ‚." << endl;
     }
     while (current)
     {
-        cout << "Èíäåêñ: " << index << " " << "Èìÿ: " << current->name() << " " << "Âèä:  " << current->vid() << " " << "Âîçðàñò: " << current->vozrast() << " " << "Ñëîæíîñòü: " << current->sloznost() << " " << "Êîëè÷åñòâî èãðîêîâ:  " << current->chislo_people() << " " << " Öåíà: " << current->price() << endl;
+        cout << "Ð˜Ð½Ð´ÐµÐºÑ: " << index << " " << "Ð˜Ð¼Ñ: " << current->name() << " " << "Ð’Ð¸Ð´:  " << current->vid() << " " << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚: " << current->vozrast() << " " << "Ð¡Ð»Ð¾Ð¶Ð½Ð¾ÑÑ‚ÑŒ: " << current->sloznost() << " " << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð²:  " << current->chislo_people() << " " << " Ð¦ÐµÐ½Ð°: " << current->price() << endl;
         current = current->next;
         index++;
     }
@@ -141,21 +141,21 @@ void Nastolki::search(ni* l, string vid, int min_price)
     {
         if (current->vid().compare(vid) == 0 && current->price() == min_price)
         {
-            cout << "Íàéäåíî: Èìÿ = " << current->name() << " " << "Öåíà: " << current->price() << endl;
+            cout << "ÐÐ°Ð¹Ð´ÐµÐ½Ð¾: Ð˜Ð¼Ñ = " << current->name() << " " << "Ð¦ÐµÐ½Ð°: " << current->price() << endl;
             found = 1;
         }
         current = current->next;
     }
     if (!found)
     {
-        cout << "Òîâàð íå íàéäåí." << endl;
+        cout << "Ð¢Ð¾Ð²Ð°Ñ€ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½." << endl;
     }
 }
 void Nastolki::edit(ni* l, int index)
 {
     if (l->n == 0 || index < 0 || index >= l->n)
     {
-        cout << "Íåâåðíûé èíäåêñ." << endl;
+        cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¸Ð½Ð´ÐµÐºÑ." << endl;
         return;
     }
 
@@ -165,6 +165,6 @@ void Nastolki::edit(ni* l, int index)
         cout << "ERROR!" << endl;
         return;
     }
-    cout << "Ââåäèòå Íîâîå èìÿ, Íîâûé òèï, Íîâûé ìèíèìàëüíûé âîçðàñò èãðîêà, Íîâóþ ñëîæíîñòü, Íîâîå êîëè÷åñòâî èãðîêîâ, Íîâóþ öåíó òîâàðà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐÐ¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ, ÐÐ¾Ð²Ñ‹Ð¹ Ñ‚Ð¸Ð¿, ÐÐ¾Ð²Ñ‹Ð¹ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð¸Ð³Ñ€Ð¾ÐºÐ°, ÐÐ¾Ð²ÑƒÑŽ ÑÐ»Ð¾Ð¶Ð½Ð¾ÑÑ‚ÑŒ, ÐÐ¾Ð²Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð², ÐÐ¾Ð²ÑƒÑŽ Ñ†ÐµÐ½Ñƒ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: ";
     cin >> *current;
 }
