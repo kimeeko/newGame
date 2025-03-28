@@ -122,7 +122,7 @@ void Nastolki::deletes(ni* l, int index)
 void Nastolki::print(ni* l)
 {
     ni* current = l->first;
-    int index = 1;
+    int index = 0;
     if (l -> first == nullptr) {
         cout << "Товаров нет." << endl;
     }
