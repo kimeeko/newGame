@@ -95,7 +95,7 @@ void Nastolki::deletes(ni* l, int index)
     {
         ni* temp = l->first;
         l->first = temp->next;
-        free(temp);
+        delete(temp);
     }
     else
     {
