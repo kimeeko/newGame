@@ -1,4 +1,3 @@
-﻿#include <string>
 #include <locale.h>
 #include "Header.h"
 using namespace std;
