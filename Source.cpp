@@ -34,11 +34,11 @@ void Nastolki::push(ni* l, std::string name, std::string vid, int vozrast, std::
 void Nastolki::load(ni* l, const string igri1)
 {
     ifstream file(igri1);
-    if (!file)
+    if (!file.is_open())
     {
         cout << "файл не найден. Создайте новый файл" << endl;
         ofstream newFile(igri1);
-        if (!file)
+        if (!file.is_open())
         {
             cout << "Ошибка! Не удалось создать файл." << endl;
             return;
@@ -57,7 +57,7 @@ void Nastolki::load(ni* l, const string igri1)
 void Nastolki::save(ni* l, const string igri1)
 {
     ofstream file(igri1);
-    if (!file)
+    if (!file.is_open())
     {
         cout << "Ошибка! Не удалось сохранить файл." << endl;
         return;
