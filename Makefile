@@ -1,1 +1,2 @@
-all: g++ Source.cpp lab.cpp -o a.out
+all: 
+        g++ Source.cpp lab.cpp -o a.out
